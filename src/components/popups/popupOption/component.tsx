@@ -205,62 +205,10 @@ class PopupOption extends React.Component<PopupOptionProps> {
     window.speechSynthesis.speak(msg);
   };
   render() {
-    const renderMenuList = () => {
       return (
-        <>
-          <div className="menu-list">
-            {popupList.map((item, index) => {
-              return (
-                <div
-                  key={item.name}
-                  className={item.name + "-option"}
-                  onClick={() => {
-                    switch (index) {
-                      case 0:
-                        this.handleNote();
-                        break;
-                      case 1:
-                        this.handleDigest();
-                        break;
-                      case 2:
-                        this.handleTrans();
-                        break;
-                      case 3:
-                        this.handleCopy();
-                        break;
-                      case 4:
-                        this.handleSearchBook();
-                        break;
-                      case 5:
-                        this.handleSearchInternet();
-                        break;
-                      case 6:
-                        this.handleSpeak();
-                        break;
-
-                      default:
-                        break;
-                    }
-                  }}
-                >
-                  <Tooltip
-                    title={this.props.t(item.title)}
-                    position="top"
-                    trigger="mouseenter"
-                  >
-                    <span
-                      className={`icon-${item.icon} ${item.name}-icon`}
-                    ></span>
-                  </Tooltip>
-                </div>
-              );
-            })}
-          </div>
-          <ColorOption />
+        < >
         </>
-      );
-    };
-    return renderMenuList();
+    );
   }
 }
 
